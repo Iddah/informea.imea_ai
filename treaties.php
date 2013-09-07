@@ -868,8 +868,9 @@ if (!class_exists('imea_treaties_page')) {
          * @param $meeting Meeting object
          * @return html string
          */
-        function decisions_meeting_summary($meeting) {
-            $ret = '';
+  function decisions_meeting_summary($meeting) {
+            $ret = " ";
+            
             if ($meeting->location) {
                 $ret = $meeting->location;
             }
@@ -877,8 +878,18 @@ if (!class_exists('imea_treaties_page')) {
                 $ret .= (strlen($ret) > 0 ? ', ' : '') . $meeting->city;
             }
             $ret .= (strlen($ret) > 0 ? ', ' : '') . show_event_interval($meeting);
-            if ($meeting->event_url) {
-                $ret .= " [<a href='{$meeting->event_url}' target='_blank' title='Visit event page on convention website'>view</a>]";
+            
+            //if ($meeting->event_url) {
+                //$ret .= " [<a href='{$meeting->event_url}' target='_blank' title='Visit event page on convention website'>view</a>]";
+            //}
+               // URL
+            if($meeting->id_treaty == 10 || $meeting->id_treaty == 4)
+            {
+              if ($meeting->id_treaty !== NULL) {
+               $ret  .= " ";
+               }
+            } else {
+                $ret .= "[<a href='{$meeting->event_url}' target='_blank' title='Visit event page on convention website'>view</a>]";
             }
             if (strlen($ret) > 0) {
                 $ret = 'Held in ' . $ret;
