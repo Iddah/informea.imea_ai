@@ -611,13 +611,10 @@ if (!class_exists('imea_treaties_page')) {
                 }
             }
             // URL
-            if($row->id_treaty == 10){
-            echo($row->id_treaty);
-            
-                 if ($row->event_url !== NULL) {
+             if ($row->event_url !== NULL) {
                 $ob->url = $row->event_url;
                 }
-            } else {
+             else {
                 $ob->url = NULL;
             }
             // Dates
