@@ -878,10 +878,6 @@ if (!class_exists('imea_treaties_page')) {
                 $ret .= (strlen($ret) > 0 ? ', ' : '') . $meeting->city;
             }
             $ret .= (strlen($ret) > 0 ? ', ' : '') . show_event_interval($meeting);
-            
-            //if ($meeting->event_url) {
-                //$ret .= " [<a href='{$meeting->event_url}' target='_blank' title='Visit event page on convention website'>view</a>]";
-            //}
                // URL
             if($meeting->id_treaty == 10 || $meeting->id_treaty == 4)
             {
