@@ -611,10 +611,9 @@ if (!class_exists('imea_treaties_page')) {
                 }
             }
             // URL
-             if ($row->event_url !== NULL) {
+                 if ($row->event_url !== NULL) {
                 $ob->url = $row->event_url;
-                }
-             else {
+            } else {
                 $ob->url = NULL;
             }
             // Dates
@@ -886,10 +885,9 @@ if (!class_exists('imea_treaties_page')) {
                // URL
             if($meeting->id_treaty == 10 || $meeting->id_treaty == 4)
             {
-                if ($meeting->event_url == NULL) {
+              if ($meeting->id_treaty !== NULL) {
                $ret  .= " ";
-               
-                }
+               }
             } else {
                 $ret .= "[<a href='{$meeting->event_url}' target='_blank' title='Visit event page on convention website'>view</a>]";
             }
