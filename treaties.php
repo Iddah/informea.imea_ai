@@ -611,8 +611,12 @@ if (!class_exists('imea_treaties_page')) {
                 }
             }
             // URL
-            if ($row->event_url !== NULL) {
+            if($row->id_treaty == 10){
+            echo($row->id_treaty);
+            
+                 if ($row->event_url !== NULL) {
                 $ob->url = $row->event_url;
+                }
             } else {
                 $ob->url = NULL;
             }
@@ -869,7 +873,8 @@ if (!class_exists('imea_treaties_page')) {
          * @return html string
          */
         function decisions_meeting_summary($meeting) {
-            $ret = '';
+            $ret = " ";
+            
             if ($meeting->location) {
                 $ret = $meeting->location;
             }
@@ -877,8 +882,19 @@ if (!class_exists('imea_treaties_page')) {
                 $ret .= (strlen($ret) > 0 ? ', ' : '') . $meeting->city;
             }
             $ret .= (strlen($ret) > 0 ? ', ' : '') . show_event_interval($meeting);
-            if ($meeting->event_url) {
-                $ret .= " [<a href='{$meeting->event_url}' target='_blank' title='Visit event page on convention website'>view</a>]";
+            
+            //if ($meeting->event_url) {
+                //$ret .= " [<a href='{$meeting->event_url}' target='_blank' title='Visit event page on convention website'>view</a>]";
+            //}
+               // URL
+            if($meeting->id_treaty == 10 || $meeting->id_treaty == 4)
+            {
+                if ($meeting->event_url == NULL) {
+               $ret  .= " ";
+               
+                }
+            } else {
+                $ret .= "[<a href='{$meeting->event_url}' target='_blank' title='Visit event page on convention website'>view</a>]";
             }
             if (strlen($ret) > 0) {
                 $ret = 'Held in ' . $ret;
@@ -986,8 +1002,8 @@ if (!class_exists('imea_treaties_page')) {
                 $val->addValidation("short_title", "req", "Please fill in the short title");
                 $val->addValidation("short_title_alternative", "req", "Please fill in the alternative short title");
                 $val->addValidation("start", "date", "Entry into force is required");
-                //$val->addValidation("year", "gt=1970", "Year must be greater than 1970");
-                //$val->addValidation("year", "lt=2100", "Year must be less than 2100");
+                //$val->addValidation("start", "gt=1970", "Entry into force must be greater than 1970");
+                //$val->addValidation("start", "lt=2100", "Entry into force must be less than 2100");
                 $val->addValidation("number_of_parties", "num", "Number of parties must be a number");
                 $val->addValidation("number_of_parties", "lt=1000", "Number of parties must be less than 1000");
                 $val->addValidation("odata_name", "req", "OData name is incorrect. Cannot be empty or contain spaces!");
@@ -1324,9 +1340,9 @@ if (!class_exists('imea_treaties_page')) {
                 $val->addValidation("id_organization", "req", "Please fill in the organization");
                 $val->addValidation("short_title", "req", "Please fill in the short title");
                 $val->addValidation("short_title_alternative", "req", "Please fill in the alternative short title");
-                $val->addValidation("year", "num", "Year must be a number");
-                $val->addValidation("year", "gt=1970", "Year must be greater than 1970");
-                $val->addValidation("year", "lt=2100", "Year must be less than 2100");
+                $val->addValidation("start", "req", "Please fill in the Entry into force");
+                //$val->addValidation("start", "gt=1970-01-01", "Year must be greater than 1970");
+                //$val->addValidation("start", "lt=2100-01-01", "Year must be less than 2100");
                 $val->addValidation("number_of_parties", "num", "Number of parties must be a number");
                 $val->addValidation("number_of_parties", "lt=1000", "Number of parties must be less than 1000");
                 $val->addValidation("odata_name", "req", "OData name is incorrect. Cannot be empty or contain spaces!");
@@ -1358,7 +1374,7 @@ if (!class_exists('imea_treaties_page')) {
                 $data['primary'] = get_request_value('primary') !== NULL;
                 $data['long_title'] = stripslashes(get_request_value('long_title'));
                 $data['short_title_alternative'] = stripslashes(get_request_value('short_title_alternative'));
-                $data['year'] = get_request_int('year', NULL);
+                $data['start'] = get_request_int('start', NULL);
                 $data['abstract'] = stripslashes(get_request_value('abstract'));
                 $data['url'] = stripslashes(get_request_value('url'));
                 $data['number_of_parties'] = get_request_int('number_of_parties', NULL);

@@ -1,0 +1,54 @@
+@media screen {
+    /* To prevent PocketPC from loading the stylesheet */
+    .options-bar a {
+        margin-right: 5px;
+    }
+
+    .details-column-1  button,
+    .autocomplete-holder  button {
+        position: relative;
+        top: 3px;
+    }
+
+    li.widget {
+        /* For Internet Explorer 8 */
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#D7F1F7, endColorstr=#ffffff)" !important;
+    }
+
+    .noshadow { filter: none !important; }
+
+    li.widget.whatisinformea img.ribbon { position: absolute; margin-top: 6px; }
+    li.widget.whatisinformea {
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#cbe0a7, endColorstr=#ffffff)" !important;
+    }
+
+    li.widget.index-explorer div.content {
+        background-color: #fff5c2;
+    }
+
+    /* @todo: Doesn't work */
+    li.widget.event-explorer {
+        filter: none;
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)" !important;
+        background-color: #cbe0a7 !important;
+    }
+
+    li.widget.borderless-widget {
+        filter: none;
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)" !important;
+    }
+
+    li.widget.image-roller {
+        filter: none;
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)" !important;
+    }
+
+    li.widget.index-explorer button.ui-button,
+    li.widget.search button.ui-button { top: 6px; }
+
+    /* SEARCH PAGE */
+    li.search { filter: none !important; }
+    li.widget.search input#q_freetext { width: 180px; }
+}
+
+/*  @media screen */

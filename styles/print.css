@@ -1,0 +1,27 @@
+/* Generic website styles for printing */
+@media print {
+
+    /* GLOBAL */
+    body { font-family: Arial, "Bitstream Charter", serif; font-size: 0.8em; }
+    img { border: 0; }
+
+    div.skip-link { display: none; }
+    ul.menu { display: none; }
+
+    div#explorer, div#footer, div#breadcrumbtrail { display: none; }
+    div.toolbar, div.management-toolbar, div.alert { display: none; }
+    div.col2-left.col2 { display: none; }
+
+    /* INDEX PAGE */
+    body.imea-index li.widget.index-explorer,
+    body.imea-index img.ribbon,
+    body.imea-index li.widget.upcoming-meetings div.paginator,
+    body.imea-index li.widget.event-explorer,
+    body.imea-index li.widget.featured-country { display: none; }
+
+    /* TREATIES PAGE */
+    body.imea-treaties div.tabs a { color: #666; }
+    body.imea-treaties div.tabs a.active { color: black; font-weight: bold; }
+    body.imea-treaties div.treaty-icon { margin-bottom: 10px; }
+    body.imea-treaties a.btn { display: none; }
+}

@@ -1,0 +1,60 @@
+@media screen {
+
+    /* Drop shadow on widgets */
+    li.widget {
+        /* For IE 5.5 - 7 */
+        filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#c2c2c2');
+    }
+
+    .noshadow { filter: none !important; }
+
+    div#breadcrumbtrail ul li { display: inline !important; }
+    ul#menu-secondary-menu li { display: inline !important; }
+
+
+    li.widget.index-explorer form { margin: 0; padding: 0; }
+    li.widget.index-explorer input { margin: 0; padding: 0; }
+
+    li.widget.index-explorer h2 {
+        top: -20px;
+        position: relative;
+        height: 20px;
+        display: inline-block;
+        margin: 0; padding: 0;
+    }
+
+    /* INDEX PAGE */
+    body.informea li.widget.tag-cloud ul li { display: inline; }
+    body.informea li.widget.featured-treaty p { display: inline; clear: both; margin: 0; padding: 0; }
+
+
+    /* SEARCH PAGE */
+    li.widget.search button.ui-button { top: -6px; }
+    li.search { filter: none !important; }
+    li.widget.search input#q_freetext { width: 180px; }
+    li.widget.search button.btn { width: 70px; height: 25px; line-height: 10px; }
+    form ul#q_term_holder li { display: inline; margin: 2px; padding: 3px; border: 1px solid #a00; background-color: #fff6e0; }
+    form ul#q_term_holder li i { margin-left: 3px; cursor: hand; }
+
+
+    div.toolbar button { float: left; margin-right: 5px; }
+    div.toolbar form { margin: 0; padding: 0; }
+
+    li.widget.news-categories ul li { display: inline; }
+
+
+    body.imea-treaties li {  margin: 0; padding: 0; list-style-type: none; }
+    body.imea-treaties div.treaty-icon { display: inline; }
+    body.imea-treaties li.widget.search form { margin: 0 0 30px 10px; width: 187px; height: 90px; }
+    body.imea-treaties li.widget.search { padding-bottom: 10px; }
+    body.imea-treaties li.widget.tag-cloud ul li { display: inline; }
+
+    body.imea-decisions li {  margin: 0; padding: 0; list-style-type: none; }
+    body.imea-decisions div.treaty-icon { display: inline; }
+    body.imea-decisions li.widget.search form { margin: 0 0 30px 10px; width: 187px; height: 90px; }
+    body.imea-decisions li.widget.search { padding-bottom: 10px; }
+    body.imea-decisions li.widget.tag-cloud ul li { display: inline; }
+
+    div#footer li { display: inline; margin: 10px; }
+    div#footer li a p { margin-top: 5px; }
+}
